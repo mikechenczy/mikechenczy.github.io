@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0026)lvxin -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<meta name="keywords" content="远程协助,远程,协助,控制,即时通讯,企业应用,mina,netty,公众号,朋友圈,推送,IM,远程控制,聊信,开源项目,微服务,微信,企业通讯,团队沟通">
+	<meta name="description" content="mjczy.top 完整的即时通讯产品。">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="shortcut icon" href="远程控制_files/Logo.png" type="image/x-icon">
+	<link href="远程控制_files/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="远程控制_files/common.css">
+	<script src="远程控制_files/hm.js.下载"></script><script src="远程控制_files/jquery.min.js.下载"></script>
+	<script src="远程控制_files/bootstrap.min.js.下载"></script>
+	<script src="远程控制_files/granim.min.js.下载"></script>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?840a13d34bb68eae75b4338f9d63cf4f";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>		<title>远程控制</title>
+</head>
+<body class="web-app ui-selectable radial-gradient-light" style="background: #ffffff;">
+<canvas id="canvas-basic" width="1300" height="750"></canvas>
+
+<div id="_main_header_banner" class="header">
+	<ul class="nav">
+		<li id="letschat"><a href="/">聊信</a></li>
+		<li id="controller" class="current"><a href="controller">远程控制</a></li>
+		<li id="donation"><a href="donation">捐赠</a></li>
+		<li id="help"><a href="help">帮助</a></li>
+		<li id="about"><a href="about">联系方式</a></li>
+	</ul>
+</div>
+
+<div class="row" style="background: #ffffff;padding-top: 50px;height: 600px;">
+	<div class="col-xs-7" style="text-align: right;height: 600px;">
+		<div class="col-xs-4" style="height: 100%;">
+			<img src="远程控制_files/call_video_incoming.jpg" style="height: 100%;">
+		</div>
+		<!--<div class="col-xs-3" style="height: 100%;">
+			<img src="./远程控制_files/lvxin_momment.png" style="height: 100%;">
+		</div>
+		<div class="col-xs-3" style="height: 100%;margin-left: 10px;">
+			<img src="./远程控制_files/lvxin_contacts_light.jpg" style="height: 100%;">
+		</div>-->
+	</div>
+
+	<div class="col-xs-5" style="color: white;">
+		<h1 style="margin-top: 0px;">远程控制,专为需求开发</h1>
+		<h3 style="margin-top: 20px;">6.4版本，可能是继mstsc、向日葵体验最好的远程协助软件</h3>
+
+		<div style="margin-top: 30px;">
+			<a type="button" target="_blank" href="ControllerSetup(6.4x64).exe" class="btn btn-success" style="border-radius: 40px;width:30%; padding: 15px; font-size: 18px; font-weight: bold;">Windows版下载</a>
+
+			<!--<img src="./远程控制_files/lvxin_qrcode.png" width="25%" style="margin-left: 12%;margin-right: 12%">
+
+			<a type="button" target="_blank" href="https://apps.apple.com/cn/app/%E4%BE%A3%E4%BF%A1/id1538111300" class="btn btn-danger" style="border-radius: 40px;width:20%; padding: 15px; font-size: 18px; font-weight: bold;">iOS版下载</a>-->
+
+		</div>
+
+		<!--<a type="button" target="_blank" href="http://git.oschina.net/farsunset/lvxin-im" class="btn btn-danger" style="border-radius: 40px;width:20%; padding: 12px; font-size: 18px; font-weight: bold; margin-top: 60px;">私有部署下载</a>
+
+		<img src="./远程控制_files/lvxin_qrcode.png" width="25%" style="margin-left: 12%;margin-right: 12%;opacity: 0;height: 0;"
+
+		<a type="button" target="_blank" href="http://lvxin.farsunset.com/" class="btn btn-info" style="width:20%;border-radius: 40px; padding: 12px; font-size: 18px; font-weight: bold; margin-top: 60px;color:white;">管理后台</a>-->
+
+		<h4 style="margin-top: 60px;">远程控制尚未授权任何法律信息，请谨慎使用</h4>
+	</div>
+</div>
+<!--<div style="text-align: center;background: white;margin-top: 150px;">
+<h2 style="margin: 30px;color: #666666;">功能介绍</h2>
+<ul class="m-navList">
+
+    <li class="itm">
+        <a href="lvxin#callpanel">
+            <img src="./远程控制_files/call.svg" width="64px" height="64px">
+            <p></p>
+            <span style="margin-top:15px">视频通话</span>
+        </a></li>
+
+    <li class="itm">
+        <a href="lvxin#notepanel">
+        <img src="./远程控制_files/note.svg" width="64px" height="64px">
+        <p></p>
+        <span style="margin-top:15px">消息通知</span>
+        </a></li>
+
+
+        <li class="itm">
+        <a href="lvxin#momentpanel">
+        <img src="./远程控制_files/moment.svg" width="64px" height="64px">
+        <p></p>
+        <span style="margin-top:15px">圈子空间</span>
+        </a></li>
+
+        <li class="itm">
+        <a href="lvxin#contactspanel">
+        <img src="./远程控制_files/contacts.svg" width="64px" height="64px">
+        <p></p>
+        <span style="margin-top:15px">通讯录</span>
+        </a></li>
+
+        <li class="itm">
+        <a href="lvxin#impanel">
+        <img src="./远程控制_files/im.svg" width="64px" height="64px">
+        <p></p>
+        <span style="margin-top:15px">IM通讯</span>
+        </a></li>
+
+        <li class="itm">
+        <a href="lvxin#pubaccountpanel">
+        <img src="./远程控制_files/pubaccount.svg" width="64px" height="64px">
+        <p></p>
+        <span style="margin-top:15px">公众号</span>
+        </a></li>
+
+        <li class="itm">
+        <a href="lvxin#apppanel">
+        <img src="./远程控制_files/app.svg" width="64px" height="64px">
+        <p></p>
+        <span style="margin-top:15px">小程序</span>
+        </a></li>
+
+      </ul>
+      </div>-->
+
+
+<!--<div class="row showview" id="callpanel" style="padding-left: 0;padding-right: 0;border-top: none;">
+	<div class="col-xs-2"></div>
+	<div class="col-xs-2">
+		<h2>已经支持音视频通话</h2>
+		<h4 style="margin-top: 40px;color:#666666;">可以支持单人的语言和视频通话，清晰流畅</h4>
+		<h4 style="margin-top: 10px;color:#666666;">体验与交互符合用户常用习惯</h4>
+	</div>
+
+	<div class="col-xs-8" style="padding-left: 10%;">
+		<img src="./远程控制_files/call_video_incoming.jpg" style="box-shadow: 0 0 5px -2px #0B203A;border: 1px solid #dfdfe0;width: 45%;float: left;">
+		<img src="./远程控制_files/call_video_outgoing.jpg" style="box-shadow: 0 0 5px -2px #0B203A;border: 1px solid #dfdfe0;width: 45%;margin-left: 10px;">
+
+	</div>
+</div>
+
+<div class="row showview" id="notepanel" style="border-top: none;">
+	<div class="col-xs-2"></div>
+	<div class="col-xs-2">
+		<h2>丰富的消息通知</h2>
+		<h4 style="margin-top: 40px;color:#666666;">消息列表可以显示各种消息通知一条不落</h4>
+		<h4 style="margin-top: 10px;color:#666666;">并且可以置顶和标记阅读状态</h4>
+	</div>
+
+	<div class="col-xs-8" style="padding-left: 10%;">
+		<img src="./远程控制_files/lvxin_chat.png" style="box-shadow: 0 0 5px -2px #0B203A;border: 1px solid #dfdfe0;width: 540px;">
+	</div>
+</div>
+
+<div class="row showview" id="momentpanel">
+	<div class="col-xs-2"></div>
+	<div class="col-xs-2">
+		<h2>简洁的团队分享空间</h2>
+		<h4 style="margin-top: 40px;color:#666666;">可以分享图片和文字</h4>
+		<h4 style="margin-top: 10px;color:#666666;">还可以分享小视频，网页链接，以及点赞,评论互动</h4>
+	</div>
+
+	<div class="col-xs-8" style="padding-left: 10%;">
+		<img src="./远程控制_files/lvxin_momment.png" style="box-shadow: 0 0 5px -2px #0B203A;border: 1px solid #dfdfe0;width: 540px;">
+	</div>
+</div>
+
+<div class="row showview" id="contactspanel">
+	<div class="col-xs-2"></div>
+	<div class="col-xs-2">
+		<h2>团队通讯录</h2>
+		<h4 style="margin-top: 40px;color:#666666;">可以快速查找团队成员</h4>
+		<h4 style="margin-top: 10px;color:#666666;">可以查看组织架构以及人员分布</h4>
+		<h4 style="margin-top: 10px;color:#666666;">通讯录实时和服务端保持同步</h4>
+		<h4 style="margin-top: 10px;color:#666666;">后台可以导入团队成员和组织架构</h4>
+	</div>
+
+	<div class="col-xs-8" style="padding-left: 10%;">
+		<img src="./远程控制_files/lvxin_contacts.png" style="box-shadow: 0 0 5px -2px #0B203A;border: 1px solid #dfdfe0;width: 540px;">
+	</div>
+</div>
+
+<div class="row showview" id="impanel">
+	<div class="col-xs-2"></div>
+	<div class="col-xs-2">
+		<h2>IM通讯</h2>
+		<h4 style="margin-top: 40px;color:#666666;">支持单人对话，以及群组聊天</h4>
+		<h4 style="margin-top: 10px;color:#666666;">支持表情，文字，小视频，语音，文件，图片，以及地理位置</h4>
+		<h4 style="margin-top: 10px;color:#666666;">人性化的设置，收到别人消息时可以选择让对方看到或者不看到你的阅读状态</h4>
+		<h4 style="margin-top: 10px;color:#666666;">最新支持基于Websocket的H5客户端</h4>
+
+	</div>
+
+	<div class="col-xs-8" style="padding-left: 10%;">
+		<img src="./远程控制_files/lvxin_contacts_chat.png" style="box-shadow: 0 0 5px -2px #0B203A;border: 1px solid #dfdfe0;width: 540px;">
+	</div>
+</div>
+
+<div class="row showview" id="pubaccountpanel">
+	<div class="col-xs-2"></div>
+	<div class="col-xs-2">
+		<h2>侣信公众号</h2>
+		<h4 style="margin-top: 40px;color:#666666;">功能原理完全和微信保持一致</h4>
+		<h4 style="margin-top: 15px;color:#666666;">独立微服务的接入，自定义菜单，自定义响应内容</h4>
+	</div>
+
+	<div class="col-xs-8" style="padding-left: 10%;">
+		<img src="./远程控制_files/lvxin_pubaccount.png" style="border: 1px solid #dfdfe0;box-shadow: 0 0 5px -2px #0B203A;width: 540px;">
+	</div>
+</div>
+
+<div class="row showview" id="apppanel">
+	<div class="col-xs-2"></div>
+	<div class="col-xs-2">
+		<h2>侣信小程序</h2>
+		<h4 style="margin-top: 40px;color:#666666;">H5应用，无限灵活扩展功能</h4>
+		<h4 style="margin-top: 15px;color:#666666;">嵌入原生应用，通过JS接口实现端对端的无缝衔接</h4>
+	</div>
+
+	<div class="col-xs-8" style="padding-left: 10%;">
+		<img src="./远程控制_files/lvxin_app.jpg" style="border: 1px solid #dfdfe0;box-shadow: 0 0 5px -2px #0B203A;width: 540px;">
+	</div>
+</div>-->
+
+<br><br><br><br>
+<div id="footer" style="height: 72px; border-top: #e2e2e2 solid 1px; background: #f3f3f3; text-align: center;">
+	<h4 style="margin-top: 28px;">©2019 mjczy.top &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://icp-faq.dnspod.cn/" target="_blank" rel="nofollow">未备号</a></h4>
+</div>
+<script type="text/javascript">
+			 	$("#lvxin").addClass("current");
+		        var granimInstance = new Granim({
+		            element: '#canvas-basic',
+		            name: 'radial-gradient',
+		            direction: 'radial',
+		            opacity: [1, 1],
+		            isPausedWhenNotInView: true,
+		            states : {
+		                "default-state": {
+		                    gradients: [
+		                    	['#2196F3', '#3F51B5'],
+		                        ['#673AB7', '#9C27B0'],
+		                        ['#E91E63', '#3F51B5']
+		                    ]
+		                }
+		            }
+		        });
+        </script>
+
+
+
+
+
+</body></html>
