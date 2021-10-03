@@ -1,10 +1,212 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>聊信网页版</title>
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://v.bootstrapmb.com/2021/6/ehqty10440/
+-->
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>
+        最好的Vpn登录
+    </title>
+    <link rel="stylesheet" href="/login/normalize.min.css">
+    <link rel="stylesheet" href="/login/style.css">
+    <link rel="stylesheet" href="./layui/css/layui.css"  media="all">
+    <link rel="shortcut icon" href="BestVpn.png">
+    <script src="js/jquery.min.js" charset="UTF-8"></script>
 </head>
 <body>
-<h5>
-    聊信网页版还在开发中，敬请等待
-</h5>
+<script src="js/checkloginback.js" charset="utf-8"></script>
+<ul class="layui-nav">
+    <li class="layui-nav-item">
+        <a href="index.html">首页</a>
+    </li>
+    <li class="layui-nav-item">
+        <a href="javascript:;">产品</a>
+        <dl class="layui-nav-child">
+            <dd><a href="bestvpn.html">最好的Vpn</a></dd>
+            <dd><a href="letschat.html">聊信</a></dd>
+        </dl>
+    </li>
+</ul>
+<div class="main">
+<div id="formContainer" class="dwo">
+    <div class="formLeft">
+        <img src="/login/avatar.jpg">
+    </div>
+    <div class="formRight">
+        <!-- Forgot password form -->
+        <form id="forgot" class="otherForm">
+            <header>
+                <h1>
+                    忘记密码
+                </h1>
+                <p>
+                    输入邮箱找回密码
+                </p>
+            </header>
+            <section>
+                <label>
+                    <p>
+                        邮箱
+                    </p>
+                    <input type="email" placeholder=" " id="forgotEmail">
+                    <div class="border">
+                    </div>
+                </label>
+                <label>
+                    <p>
+                        验证码
+                    </p>
+                    <input type="text" placeholder=" " id="forgotCode">
+                    <div class="border">
+                    </div>
+                </label>
+                <label>
+                    <p>
+                        新密码
+                    </p>
+                    <input type="password" placeholder=" " id="forgotPassword">
+                    <div class="border">
+                    </div>
+                </label>
+                <label>
+                    <p>
+                        重复新密码
+                    </p>
+                    <input type="password" placeholder=" " id="forgotPasswordAgain">
+                    <div class="border">
+                    </div>
+                </label>
+                <label>
+                    <button type="button" id="sendEmailBtn">
+                        发送验证码
+                    </button>
+                    <div class="border">
+                    </div>
+                </label>
+                <button type="button" id="submitBtn">
+                    确认修改
+                </button>
+            </section>
+            <footer>
+                <button type="button" class="forgotBtn">
+                    返回
+                </button>
+            </footer>
+        </form>
+        <!-- Login form -->
+        <form id="loginForm">
+            <header>
+                <h1>
+                    最好的Vpn
+                </h1>
+                <p>
+                    请先登录
+                </p>
+            </header>
+            <section>
+                <label>
+                    <p>
+                        用户名
+                    </p>
+                    <input type="text" placeholder=" " id="username">
+                    <div class="border">
+                    </div>
+                </label>
+                <label>
+                    <p>
+                        密码
+                    </p>
+                    <input type="password" placeholder=" " id="password">
+                    <div class="border">
+                    </div>
+                </label>
+                <button type="button" id="loginBtn">
+                    登 录
+                </button>
+            </section>
+            <footer>
+                <button type="button" class="forgotBtn">
+                    忘记密码？
+                </button>
+                <button type="button" class="registerBtn">
+                    新用户？
+                </button>
+            </footer>
+        </form>
+        <!-- Register form -->
+        <form id="registerForm" class="otherForm">
+            <header>
+                <h1>
+                    用户注册
+                </h1>
+                <p>
+                    注册后享受更多服务
+                </p>
+            </header>
+            <section>
+                <label>
+                    <p>
+                        用户名
+                    </p>
+                    <input type="text" placeholder=" " id="registerUsername">
+                    <div class="border">
+                    </div>
+                </label>
+                <label>
+                    <p>
+                        邮箱
+                    </p>
+                    <input type="email" placeholder=" " id="registerEmail">
+                    <div class="border">
+                    </div>
+                </label>
+                <label>
+                    <p>
+                        密码
+                    </p>
+                    <input type="password" placeholder=" " id="registerPassword">
+                    <div class="border">
+                    </div>
+                </label>
+                <label>
+                    <p>
+                        重复密码
+                    </p>
+                    <input type="password" placeholder=" " id="registerPasswordAgain">
+                    <div class="border">
+                    </div>
+                </label>
+                <label>
+                    <p>
+                        验证码
+                    </p>
+                    <input type="password" placeholder=" " id="registerCode">
+                    <div class="border">
+                    </div>
+                </label>
+                <label>
+                    <button type="button" id="registerSendEmailBtn">
+                        发送验证码
+                    </button>
+                    <div class="border">
+                    </div>
+                </label>
+                <button type="button" id="registerBtn">
+                    注 册
+                </button>
+            </section>
+            <footer>
+                <button type="button" class="registerBtn">
+                    返回
+                </button>
+            </footer>
+        </form>
+    </div>
+</div>
+</div>
+<script src="/login/script.js"></script>
+<script src="/js/utils.js"></script>
+<script src="./layui/layui.js" charset="utf-8"></script>
 </body>
+
 </html>
