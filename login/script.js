@@ -1,4 +1,4 @@
-var address = "localhost:8765";
+var address = "159.75.69.133:8765";
 $(function() {
     $(".forgotBtn").click(function() {
         $("#forgot, #formContainer").toggleClass("toggle")

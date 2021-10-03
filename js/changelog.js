@@ -1,4 +1,4 @@
-var backendAddress = "localhost:8765"
+var backendAddress = "159.75.69.133:8765"
 $(function() {
     $.ajax({
         url: 'http://' + backendAddress + '/api/changelog',
