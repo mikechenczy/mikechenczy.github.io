@@ -10,7 +10,7 @@ $(function() {
             jsonp: "callback",//服务端返回回调方法名
             success: function (data) {
                 switch (data.errno) {
-                    case 1:
+                    case 0:
                         $("#avatar").show();
                         $("#login").hide();
                         break;
