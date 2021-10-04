@@ -1,4 +1,4 @@
-var backendAddress = "159.75.69.133:8765"
+var backendAddress = "159.75.69.133:"+(('https:' === document.location.protocol)?"8764":"8765")
 $(function() {
     $.ajax({
         url: '//' + backendAddress + '/api/changelog',
