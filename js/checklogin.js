@@ -3,6 +3,7 @@ $(function() {
     $("#avatar").hide();
     var username = getCookie('username')
     var password = getCookie("password")
+	alert(username)
     if(username != null && username !== "" && password != null && password !== "" && check(username, password)){
 
         $.ajax({
