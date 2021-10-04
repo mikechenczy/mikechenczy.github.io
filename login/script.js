@@ -15,7 +15,8 @@ $(function() {
             alert("请输入密码");
         } else {
             $.ajax({
-                url: '//'+address+'/api/login?username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password),
+                url: '//'+address+'/api/login?username=' + encodeURIComponent(username) + '&password='
+                    + encodeURIComponent(password)+"&domain="+document.domain,
                 dataType : "jsonp",//数据类型为jsonp
                 jsonp: "callback",//服务端返回回调方法名
                 success: function (data) {
@@ -40,7 +41,7 @@ $(function() {
                 alert("请输入正确的邮箱");
             } else {
                 $.ajax({
-                    url: '//'+address+'/api/register?email=' + encodeURIComponent(email) + '&getCode=1',
+                    url: '//'+address+'/api/register?email=' + encodeURIComponent(email) + '&getCode=1'+"&domain="+document.domain,
                     dataType : "jsonp",//数据类型为jsonp
                     jsonp: "callback",//服务端返回回调方法名
                     success: function (data) {
@@ -107,7 +108,7 @@ $(function() {
         } else {
             $.ajax({
                 url: '//'+address+'/api/register?username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password) + '&email=' + encodeURIComponent(email) + '&code=' +
-                    encodeURIComponent(code),
+                    encodeURIComponent(code)+"&domain="+document.domain,
                 dataType : "jsonp",//数据类型为jsonp
                 jsonp: "callback",//服务端返回回调方法名
                 success: function (data) {
