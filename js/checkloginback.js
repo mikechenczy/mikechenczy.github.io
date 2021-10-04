@@ -2,7 +2,7 @@ var backendAddress = "159.75.69.133:8765"
 $(function() {
     $("#avatar").hide();
     $.ajax({
-        url: 'http://' + backendAddress + '/api/checkLogin',
+        url: '//' + backendAddress + '/api/checkLogin',
         dataType: "jsonp",//数据类型为jsonp
         jsonp: "callback",//服务端返回回调方法名
         success: function (data) {
