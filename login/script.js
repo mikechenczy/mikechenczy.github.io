@@ -16,12 +16,14 @@ $(function() {
         } else {
             $.ajax({
                 url: '//'+address+'/api/login?username=' + encodeURIComponent(username) + '&password='
-                    + encodeURIComponent(password)+"&domain="+document.domain,
+                    + encodeURIComponent(password),
                 dataType : "jsonp",//数据类型为jsonp
                 jsonp: "callback",//服务端返回回调方法名
                 success: function (data) {
                     console.log(data);
                     if (data.errno === 0) {
+                        setCookie("username", username)
+                        setCookie("password", password)
                         window.location = 'bestvpn.html';
                     } else {
                         alert("用户名或密码错误");
@@ -41,7 +43,7 @@ $(function() {
                 alert("请输入正确的邮箱");
             } else {
                 $.ajax({
-                    url: '//'+address+'/api/register?email=' + encodeURIComponent(email) + '&getCode=1'+"&domain="+document.domain,
+                    url: '//'+address+'/api/register?email=' + encodeURIComponent(email) + '&getCode=1',
                     dataType : "jsonp",//数据类型为jsonp
                     jsonp: "callback",//服务端返回回调方法名
                     success: function (data) {
@@ -108,13 +110,15 @@ $(function() {
         } else {
             $.ajax({
                 url: '//'+address+'/api/register?username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password) + '&email=' + encodeURIComponent(email) + '&code=' +
-                    encodeURIComponent(code)+"&domain="+document.domain,
+                    encodeURIComponent(code),
                 dataType : "jsonp",//数据类型为jsonp
                 jsonp: "callback",//服务端返回回调方法名
                 success: function (data) {
                     console.log(data);
                     switch (data.errno) {
                         case 0:
+                            setCookie("username", username)
+                            setCookie("password", password)
                             window.location='bestvpn.html';
                             break;
                         case 1:
