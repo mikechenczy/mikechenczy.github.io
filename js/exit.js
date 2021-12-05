@@ -1,4 +1,4 @@
-var backendAddress = "server.mjczy.xyz:"+(('https:' === document.location.protocol)?"8764":"8765")
+var backendAddress = "81.68.185.86:"+(('https:' === document.location.protocol)?"8764":"8765")
 $(function() {
     $.ajax({
         url: '//' + backendAddress + '/api/exit',
