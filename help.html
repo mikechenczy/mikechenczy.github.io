@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>使用说明</title>
+    <link rel="shortcut icon" href="image/MJLogo.png">
+</head>
+<body>
+
+<center>
+    <h1>使用说明</h1>
+</center>
+<t>
+    1.Android手机上可以下载安装Go安装器，一键安装google套件。
+    <a id="content" href="http://www.appchina.com/app/com.goplaycn.googleinstall/">http://www.appchina.com/app/com.goplaycn.googleinstall/</a>
+    <button onclick="copy()">一键复制</button>
+    <br>
+    2.进入Go安装器，点击安装google三件套，然后按照应用内步骤进行安装。
+    <br>
+    3.在桌面找到Google Play，进入即可登录谷歌，下载并使用YouTube、Twitter等应用了
+    <br><br>
+    电脑版使用很简单，直接在浏览器内输入地址访问即可。如 <a href="https://youtube.com/">https://youtube.com/</a> <a href="https://google.com/">https://google.com</a>
+</t>
+
+</body>
+<script>
+    function copy() {
+        var ssrsss = document.getElementById("content").innerText;
+        var flag = copyText(ssrsss); //传递文本
+        flag ? layer.msg('复制成功！', {icon: 1}) : layer.msg('复制失败！', {icon: 2});
+    }
+    function copyText(text) {
+        var textarea = document.createElement("input");//创建input对象
+        var currentFocus = document.activeElement;//当前获得焦点的元素
+        document.body.appendChild(textarea);//添加元素
+        textarea.value = text;
+        textarea.focus();
+        if(textarea.setSelectionRange)
+            textarea.setSelectionRange(0, textarea.value.length);//获取光标起始位置到结束位置
+        else
+            textarea.select();
+        try {
+            var flag = document.execCommand("copy");//执行复制
+        } catch(eo) {
+            var flag = false;
+        }
+        document.body.removeChild(textarea);//删除元素
+        currentFocus.focus();
+        return flag;
+    }
+</script>
+</html>
