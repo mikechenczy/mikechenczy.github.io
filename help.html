@@ -11,21 +11,20 @@
     <h1>使用说明</h1>
 </center>
 <t>
-    1.Android手机上可以下载安装Go安装器，一键安装google套件。
-    <a id="content" href="http://www.appchina.com/app/com.goplaycn.googleinstall/">http://www.appchina.com/app/com.goplaycn.googleinstall/</a>
-    <button onclick="copy()">一键复制</button>
+    1.Android手机上可以下载安装<a id="content" href="http://www.appchina.com/app/com.goplaycn.googleinstall/">Go安装器</a>(需到浏览器中下载)，一键安装google套件。
+    <button onclick="copy()">一键复制下载链接</button>
     <br>
     2.进入Go安装器，点击安装google三件套，然后按照应用内步骤进行安装。
     <br>
-    3.在桌面找到Google Play，进入即可登录谷歌，下载并使用YouTube、Twitter等应用了
+    3.在桌面找到Google Play，进入即可登录谷歌，下载并使用YouTube、Twitter等应用了。
     <br><br>
-    电脑版使用很简单，直接在浏览器内输入地址访问即可。如 <a href="https://youtube.com/">https://youtube.com/</a> <a href="https://google.com/">https://google.com</a>
+    电脑版使用很简单，直接在浏览器内输入地址访问即可。如 <a href="https://youtube.com/">YouTube</a> <a href="https://google.com/">Google</a> 等。
 </t>
 
 </body>
 <script>
     function copy() {
-        var ssrsss = document.getElementById("content").innerText;
+        var ssrsss = "http://www.appchina.com/app/com.goplaycn.googleinstall/";
         var flag = copyText(ssrsss); //传递文本
         flag ? layer.msg('复制成功！', {icon: 1}) : layer.msg('复制失败！', {icon: 2});
     }
