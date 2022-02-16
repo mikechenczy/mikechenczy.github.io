@@ -13,7 +13,7 @@ $(function() {
                     case 0:
                         $("#avatar").show();
                         $("#login").hide();
-                        window.location="bestvpn.html"
+                        window.location="leapvpn.html"
                         break;
                 }
             }

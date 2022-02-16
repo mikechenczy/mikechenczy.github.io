@@ -1,4 +1,4 @@
-var address = "server.mjczy.xyz:"+(('https:' === document.location.protocol)?"8764":"8765");
+var address = "81.68.185.86:"+(('https:' === document.location.protocol)?"8764":"8765");
 $(function() {
     $(".forgotBtn").click(function() {
         $("#forgot, #formContainer").toggleClass("toggle")
@@ -24,7 +24,7 @@ $(function() {
                     if (data.errno === 0) {
                         setCookie("username", username)
                         setCookie("password", password)
-                        window.location = 'bestvpn.html';
+                        window.location = 'leapvpn.html';
                     } else {
                         alert("用户名或密码错误");
                     }
@@ -119,7 +119,7 @@ $(function() {
                         case 0:
                             setCookie("username", username)
                             setCookie("password", password)
-                            window.location='bestvpn.html';
+                            window.location='leapvpn.html';
                             break;
                         case 1:
                             alert("数据格式有误");

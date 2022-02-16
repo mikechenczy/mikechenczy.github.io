@@ -7,7 +7,7 @@ $(function() {
         success: function (data) {
             removeCookie("username")
             removeCookie("password")
-            window.location="bestvpn.html";
+            window.location="leapvpn.html";
         }
     });
 });
