@@ -1,4 +1,4 @@
-var backendAddress = "81.68.185.86:"+(('https:' === document.location.protocol)?"8764":"8765")
+var backendAddress = "139.224.206.212:"+(('https:' === document.location.protocol)?"8764":"8765")
 $(function() {
     $("#avatar").hide();
     var username = getCookie('username')

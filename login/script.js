@@ -1,4 +1,4 @@
-var address = "81.68.185.86:"+(('https:' === document.location.protocol)?"8764":"8765");
+var address = "139.224.206.212:"+(('https:' === document.location.protocol)?"8764":"8765");
 $(function() {
     $(".forgotBtn").click(function() {
         $("#forgot, #formContainer").toggleClass("toggle")
