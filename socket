@@ -1,1 +1,18 @@
-{"leapvpn":{"ipv4":"http://home.mjczy.life:8880/","ipv6":"http://ipv6.mjczy.life:8880/"}, "leapremote":{"ip":"139.224.206.212","port":11451,"httpPort":11452}}
+{
+	"leapvpn":{
+		"ipv4":"http://home.mjczy.life:8880/",
+		"ipv6":"http://ipv6.mjczy.life:8880/"
+	},
+	"leapremote":{
+		"ipv4":"http://home.mjczy.life:2082/",
+		"ipv6":"http://ipv6.mjczy.life:2082/",
+		"ipv4Netty":{
+			"ip":"home.mjczy.life",
+			"port":2086
+		},
+		"ipv6Netty":{
+			"ip":"ipv6.mjczy.life",
+			"port":2086
+		}
+	}
+}
