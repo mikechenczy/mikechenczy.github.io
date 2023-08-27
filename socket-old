@@ -1,0 +1,12 @@
+{
+	"leapvpn":{
+		"ipv4":"http://139.224.206.212:8880/",
+		"ipv6":"http://139.224.206.212:8880/"
+	},
+	"leapremote":{
+		"ipv4":"http://home.mjczy.life:2086/",
+		"ipv6":"http://ipv6.mjczy.life:2086/",
+		"ipv4Url":"ws://home.mjczy.life:2086/websocket/",
+		"ipv6Url":"ws://ipv6.mjczy.life:2086/websocket/"
+	}
+}
