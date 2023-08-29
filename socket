@@ -1,6 +1,7 @@
 {
 	"leapvpn":{
 		"ipv4-new":"http://home.mjczy.life:8880/",
+		"ipv6-new":"http://ipv6.mjczy.life:8880/",
 		"ipv4":"http://139.224.206.212:8880/",
 		"ipv6":"http://139.224.206.212:8880/",
 		"host":"home.mjczy.life:8880"
