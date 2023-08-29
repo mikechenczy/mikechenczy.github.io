@@ -10,6 +10,11 @@
 		"ipv4":"http://139.224.206.212:2086/",
 		"ipv6":"http://ipv6.mjczy.life:2086/",
 		"ipv4Url":"ws://139.224.206.212:2086/websocket/",
-		"ipv6Url":"ws://ipv6.mjczy.life:2086/websocket/"
+		"ipv6Url":"ws://ipv6.mjczy.life:2086/websocket/",
+		"ipv4-new":"http://home.mjczy.life:2086/",
+		"ipv6-new":"http://ipv6.mjczy.life:2086/",
+		"ipv4Url-new":"ws://104.25.96.0:2086/websocket/",
+		"ipv6Url-new":"ws://ipv6.mjczy.life:2086/websocket/",
+		"host":"home.mjczy.life:2086"
 	}
 }
