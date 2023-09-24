@@ -1,0 +1,18 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WebClient\Parameters]
+"AcceptOfficeAndTahoeServers"=dword:00000001
+"BasicAuthLevel"=dword:00000002
+"ClientDebug"=dword:00000000
+"FileAttributesLimitInBytes"=dword:000f4240
+"FileSizeLimitInBytes"=dword:ffffffff
+"InternetServerTimeoutInSec"=dword:0000001e
+"LocalServerTimeoutInSec"=dword:0000000f
+"SendReceiveTimeoutInSec"=dword:0000003c
+"ServerNotFoundCacheLifeTimeInSec"=dword:0000003c
+"ServiceDebug"=dword:00000000
+"ServiceDll"=hex(2):25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,\
+  00,74,00,25,00,5c,00,53,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,\
+  77,00,65,00,62,00,63,00,6c,00,6e,00,74,00,2e,00,64,00,6c,00,6c,00,00,00
+"ServiceDllUnloadOnStop"=dword:00000001
+"SupportLocking"=dword:00000001
