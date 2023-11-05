@@ -11,8 +11,8 @@
 		"ipv6":"http://139.224.206.212:2086/",
 		"ipv4Url":"ws://139.224.206.212:2086/websocket/",
 		"ipv6Url":"ws://ipv6.mjczy.life:2086/websocket/",
-		"ipv4-new":"http://139.224.206.212:2086/",
-		"ipv6-new":"http://139.224.206.212:2086/",
+		"ipv4-new":"http://185.225.20.179:2086/",
+		"ipv6-new":"http://[2a0e:97c0:7d4:a932:b9fc:7593:6501:cbb6]:2086/",
 		"ipv4Url-new":"139.224.206.212:2086/websocket/",
 		"ipv6Url-new":"ws://139.224.206.212:2086/websocket/",
 		"host":""
