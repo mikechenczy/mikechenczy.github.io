@@ -1,1 +1,1 @@
-java -jar nat-1.0.jar c "ws://home.mjczy.life:2095/ws" 11451 "home.mjczy.life:2095"
+java -jar nat-1.0.jar c "ws://home.mjczy.top:2095/ws" 11451 "home.mjczy.top:2095"

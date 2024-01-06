@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="mikechenczy.github.io">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mods.zip!/" />
+      <root url="jar://$PROJECT_DIR$/winnie.jar!/" />
+      <root url="jar://$PROJECT_DIR$/nat-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Leap.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
