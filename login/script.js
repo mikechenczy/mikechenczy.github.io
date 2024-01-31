@@ -1,4 +1,4 @@
-var address = "139.224.206.212:"+(('https:' === document.location.protocol)?"8764":"8765");
+var address = "mjczy.top";//+(('https:' === document.location.protocol)?"8764":"8880");
 $(function() {
     $(".forgotBtn").click(function() {
         $("#forgot, #formContainer").toggleClass("toggle")
@@ -15,7 +15,7 @@ $(function() {
             alert("请输入密码");
         } else {
             $.ajax({
-                url: '//'+address+'/api/login?username=' + encodeURIComponent(username) + '&password='
+                url: '/backend/api/login?username=' + encodeURIComponent(username) + '&password='
                     + encodeURIComponent(password),
                 dataType : "jsonp",//数据类型为jsonp
                 jsonp: "callback",//服务端返回回调方法名
@@ -43,7 +43,7 @@ $(function() {
                 alert("请输入正确的邮箱");
             } else {
                 $.ajax({
-                    url: '//'+address+'/api/register?email=' + encodeURIComponent(email) + '&getCode=1',
+                    url: 'backend/api/register?email=' + encodeURIComponent(email) + '&getCode=1',
                     dataType : "jsonp",//数据类型为jsonp
                     jsonp: "callback",//服务端返回回调方法名
                     success: function (data) {
