@@ -28,6 +28,11 @@
         </h2>
         <div id="qrcode"></div>
         <br>
+        <h3>
+            手机端请点击下方链接用支付宝打开
+        </h3>
+        <a id="url"></a>
+        <br>
         <button id="cancel">放弃支付</button>
         <button id="paid">我已支付</button>
     </center>
@@ -35,6 +40,8 @@
         if (getParam("url")===null || getParam("payNo")===null) {
             window.location = 'account.html';
         }
+        document.getElementById("url").innerHTML = getParam('url');
+        document.getElementById("url").setAttribute('href', getParam('url'));
         new QRCode(document.getElementById("qrcode"), getParam("url"));
         $("#paid").click(function(){
             $.ajax({
