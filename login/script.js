@@ -10,7 +10,7 @@ $(function() {
         var username = document.getElementById("username").value
         var password = document.getElementById("password").value;
         if(username==='' || username===undefined || username===null) {
-            alert("请输入用户名");
+            alert("请输入用户名或邮箱");
         } else if(password==='' || password===undefined || password===null) {
             alert("请输入密码");
         } else {
