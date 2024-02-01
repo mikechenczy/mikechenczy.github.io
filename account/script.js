@@ -1,8 +1,6 @@
-let debug = false;
-let urlPrefix = debug?'http://localhost:8880/':'/backend/'
 var userId;
 if(getCookie("username")==null || getCookie("password")==null) {
-    //window.location = 'login.html';
+    window.location = 'login.html';
 }
 $.ajax({
     url: debug?"https://mjczy.top/getIp":"getIp",

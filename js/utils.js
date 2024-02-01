@@ -1,4 +1,5 @@
-
+var debug = false;
+var urlPrefix = debug?'http://localhost:8880/':'/backend/';
 function check(username, password) {
     return !(username.indexOf(' ') >= 0 || password.indexOf(' ') >= 0 || username === '' || password === '' || username === undefined || password === undefined ||
         username === null || password === null || username.length >= 15 || password.length >= 20);

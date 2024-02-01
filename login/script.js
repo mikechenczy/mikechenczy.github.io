@@ -1,5 +1,4 @@
-let debug = false;
-let urlPrefix = debug?'http://localhost:8880/':'/backend/'
+
 $(function() {
     $(".forgotBtn").click(function() {
         $("#forgot, #formContainer").toggleClass("toggle")

@@ -1,5 +1,3 @@
-let debug = false;
-let urlPrefix = debug?'http://localhost:8880/':'/backend/'
 $.ajax({
     url: urlPrefix + 'api/changelog',
     dataType: "json",
