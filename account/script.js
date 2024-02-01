@@ -47,7 +47,7 @@ $.ajax({
                     }
                     document.getElementById('choosePay').appendChild(input);
                     var label = document.createElement('label');
-                    label.innerHTML = item.description+"元 "+item.time;
+                    label.innerHTML = item.price+"元 "+item.time;
                     document.getElementById('choosePay').appendChild(label);
                     var br = document.createElement('br');
                     document.getElementById('choosePay').appendChild(br);
