@@ -1,16 +1,16 @@
-var backendAddress = "180.76.187.250:"+(('https:' === document.location.protocol)?"8764":"8765")
-$(function() {
-    $.ajax({
-        url: '//' + backendAddress + '/api/changelog',
-        dataType: "jsonp",//数据类型为jsonp
-        jsonp: "callback",//服务端返回回调方法名
-        success: function (data) {
-            switch (data.errno) {
-                case 0:
+let debug = false;
+let urlPrefix = debug?'http://localhost:8880/':'/backend/'
+$.ajax({
+    url: urlPrefix + 'api/changelog',
+    dataType: "json",
+    success: function (data) {
+        switch (data.errno) {
+            case 0:
+                $(function() {
                     $("#changelog-bestvpn").text(data.b);
                     $("#changelog-letschat").text(data.l);
-                    break;
-            }
+                })
+                break;
         }
-    });
+    }
 });

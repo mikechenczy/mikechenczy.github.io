@@ -89,6 +89,16 @@ function getFileIdByDataAndFileName(data, fileName) {
     return null;
 }
 
+function getParam(param){
+    var reg = new RegExp("(^|&)"+param+"=([^&]*)(&|$)");
+    var paramsLi = window.location.search.substr(1).match(reg);
+    if (paramsLi != null && paramsLi !="" && paramsLi!=undefined) {
+        var param=unescape(paramsLi[2]);
+        return param;
+    }
+    return null;
+}
+
 function getCookie(name) {
     var prefix = name + "="
     var start = document.cookie.indexOf(prefix)

@@ -1,0 +1,67 @@
+<html>
+<head>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/qrcode.min.js"></script>
+    <script src="js/utils.js"></script>
+    <style>
+        button {
+            background: #00897B;
+            border: 0;
+            width: 100px;
+            margin-top: 10px;
+            padding: 10px 0;
+            font-weight: 600;
+            border-radius: 10%;
+            color: #fff;
+            cursor: pointer
+        }
+        button:hover {
+            opacity: 1;
+            background: #007f72
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h2>
+            请用支付宝扫码支付
+        </h2>
+        <div id="qrcode"></div>
+        <br>
+        <button id="cancel">放弃支付</button>
+        <button id="paid">我已支付</button>
+    </center>
+    <script>
+        let debug = false;
+        let urlPrefix = debug?'http://localhost:8880/':'/backend/'
+        if (getParam("url")===null || getParam("payNo")===null) {
+            window.location = 'account.html';
+        }
+        new QRCode(document.getElementById("qrcode"), getParam("url"));
+        $("#paid").click(function(){
+            $.ajax({
+                url: urlPrefix+'pay/query?payNo=' + getParam("payNo"),
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                    switch(data.errno) {
+                        case 0:
+                            if(!data.result) {
+                                alert("未支付");
+                            } else {
+                                alert("支付成功");
+                                window.location = 'account.html';
+                            }
+                            break;
+                        default:
+                            alert("订单号失效");
+                    }
+                }
+            });
+        });
+        $("#cancel").click(function(){
+            window.location = 'account.html';
+        });
+    </script>
+</body>
+</html>

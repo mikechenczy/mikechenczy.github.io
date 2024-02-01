@@ -18,8 +18,7 @@
     <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
 </head>
 <body>
-<script src="js/checklogin.js" charset="UTF-8"></script>
-<script src="js/checkvd.js" charset="UTF-8"></script>
+<script src="js/check.js" charset="UTF-8"></script>
 <ul class="layui-nav">
     <li class="layui-nav-item">
         <a href="index.html">首页</a>
@@ -40,17 +39,19 @@
             <!--<dd><a href="letschat.html">聊信</a></dd>-->
         </dl>
     </li>
-    <!--<li class="layui-nav-item" style="float: right" id="login">
+    <li class="layui-nav-item" style="float: right" id="login">
         <a href="login.html">注册或登录</a>
     </li>
-    <li class="layui-nav-item" lay-unselect="" style="float: right" id="avatar">
+    <li class="layui-nav-item" lay-unselect="" style="float: right;" id="avatar">
         <a href="javascript:;"><img src="image/LeapVPN.png" class="layui-nav-img"></a>
         <dl class="layui-nav-child">
-            <dd><a href="javascript:;">我的</a></dd>
+            <dd><a href="account.html">我的</a></dd>
             <hr>
-            <dd style="text-align: center;"><a href="exit.html">退出</a></dd>
+            <dd style="text-align: center;"><a onclick="removeCookie('username');
+                removeCookie('password');
+                window.location = 'leapvpn.html';">退出</a></dd>
         </dl>
-    </li>-->
+    </li>
 </ul>
 <div class="site-banner">
     <div class="site-banner-bg" style="background-size: cover;">
