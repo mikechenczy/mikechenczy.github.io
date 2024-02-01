@@ -1,5 +1,3 @@
-let debug = false;
-let urlPrefix = debug?'http://localhost:8880/':'/backend/'
 var username = getCookie('username')
 var password = getCookie("password")
 if(username != null && username !== "" && password != null && password !== "" && check(username, password)) {
