@@ -1,22 +1,24 @@
-var backendAddress = "180.76.187.250:"+(('https:' === document.location.protocol)?"8764":"8765")
-$(function() {
-    $("#avatar").hide();
-    var username = getCookie('username')
-    var password = getCookie("password")
-    if(username != null && username !== "" && password != null && password !== "" && check(username, password)) {
-        $.ajax({
-            url: '//' + backendAddress + '/api/login?username=' + encodeURIComponent(username) + "&password=" + password,
-            dataType: "jsonp",//数据类型为jsonp
-            jsonp: "callback",//服务端返回回调方法名
-            success: function (data) {
-                switch (data.errno) {
-                    case 0:
-                        $("#avatar").show();
-                        $("#login").hide();
-                        window.location="leapvpn.html"
-                        break;
+let debug = false;
+let urlPrefix = debug?'http://localhost:8880/':'/backend/'
+var username = getCookie('username')
+var password = getCookie("password")
+if(username != null && username !== "" && password != null && password !== "" && check(username, password)) {
+    $.ajax({
+        url: debug?"https://mjczy.top/getIp":"getIp",
+        success: function (data) {
+            var pattern = /((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)/;
+            console.log(pattern.exec(data)[0]);
+            $.ajax({
+                url: urlPrefix+'user/login?device=web&username=' + encodeURIComponent(username) + '&password='
+                    + encodeURIComponent(password) + '&ipAddress=' + encodeURIComponent(pattern.exec(data)[0]),
+                dataType : "json",
+                success: function (data) {
+                    switch (data.errno) {
+                        case 0:
+                            window.location="account.html"
+                    }
                 }
-            }
-        });
-    }
-});
+            });
+        }
+    });
+}
