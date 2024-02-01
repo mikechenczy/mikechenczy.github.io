@@ -16,7 +16,9 @@ $(function() {
         } else {
             $.ajax({
                 url: debug?"https://mjczy.top/getIp":"getIp",
+                dataType: "text",
                 success: function (data) {
+                    console.log(data);
                     var pattern = /((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)/;
                     console.log(pattern.exec(data)[0]);
                     $.ajax({

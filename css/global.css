@@ -410,7 +410,7 @@ body .layui-layout-admin .site-demo{padding: 0;}
   .header .layui-nav .layui-nav-item a{padding: 0 20px;}
   .header .layui-nav .layui-nav-item[pc]{display: none;}
   .header .layui-nav .layui-nav-item[mobile]{display: inline-block;}
-  .site-banner{height: 360px;}
+  .site-banner{height: 400px;}
   .site-banner-bg{background-size: cover;}
   .site-zfj{height: 100px; padding-top: 5px;}
   .site-zfj i{top: 10px; width: 100px; height: 100px; margin-left: -50px; font-size: 100px;}
