@@ -1,4 +1,5 @@
-var address = "mjczy.top";//+(('https:' === document.location.protocol)?"8764":"8880");
+let debug = true;
+let urlPrefix = debug?'http://localhost:8880/':'/backend/'
 $(function() {
     $(".forgotBtn").click(function() {
         $("#forgot, #formContainer").toggleClass("toggle")
@@ -15,7 +16,7 @@ $(function() {
             alert("请输入密码");
         } else {
             $.ajax({
-                url: '/backend/api/login?username=' + encodeURIComponent(username) + '&password='
+                url: urlPrefix+'user/login?device=web&username=' + encodeURIComponent(username) + '&password='
                     + encodeURIComponent(password),
                 dataType : "jsonp",//数据类型为jsonp
                 jsonp: "callback",//服务端返回回调方法名
@@ -24,7 +25,7 @@ $(function() {
                     if (data.errno === 0) {
                         setCookie("username", username)
                         setCookie("password", password)
-                        window.location = 'leapvpn.html';
+                        window.location = 'account.html';
                     } else {
                         alert("用户名或密码错误");
                     }
@@ -43,7 +44,7 @@ $(function() {
                 alert("请输入正确的邮箱");
             } else {
                 $.ajax({
-                    url: 'backend/api/register?email=' + encodeURIComponent(email) + '&getCode=1',
+                    url: urlPrefix+'api/register?email=' + encodeURIComponent(email) + '&getCode=1',
                     dataType : "jsonp",//数据类型为jsonp
                     jsonp: "callback",//服务端返回回调方法名
                     success: function (data) {
@@ -109,7 +110,7 @@ $(function() {
             alert("请输入验证码");
         } else {
             $.ajax({
-                url: '//'+address+'/api/register?username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password) + '&email=' + encodeURIComponent(email) + '&code=' +
+                url: urlPrefix+'api/register?username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password) + '&email=' + encodeURIComponent(email) + '&code=' +
                     encodeURIComponent(code),
                 dataType : "jsonp",//数据类型为jsonp
                 jsonp: "callback",//服务端返回回调方法名
