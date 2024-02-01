@@ -32,8 +32,6 @@
         <button id="paid">我已支付</button>
     </center>
     <script>
-        let debug = false;
-        let urlPrefix = debug?'http://localhost:8880/':'/backend/'
         if (getParam("url")===null || getParam("payNo")===null) {
             window.location = 'account.html';
         }
