@@ -14,29 +14,34 @@
     <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
 </head>
 <body>
-    <h1>请选择您设备的abi</h1>
-    <div>
-        <button onclick="window.location='BestVpn-arm64.apk'">
-            ARM64(A8)
-        </button>
-        <h3>推荐，支持大部分机型</h3>
-    </div>
-    <div>
-        <button onclick="window.location='BestVpn-arm.apk'">
-            ARM32(A7)
-        </button>
-        <h3>通用，其他不行选这个，Android14会提示32位应用</h3>
-    </div>
-    <div>
-        <button onclick="window.location='BestVpn-x86-x64.apk'">
-            x86-x64
-        </button>
-        <h3>模拟器选这个，64位机型</h3>
-    </div>
-    <div>
-        <button onclick="window.location='BestVpn-x86.apk'">
-            x86
-        </button>
-        <h3>模拟器选这个，32位机型</h3>
-    </div>
+    <center>
+        <h1>请选择您Android设备的系统架构(abi)</h1>
+        <div>
+            <button onclick="window.location='BestVpn-arm.apk'">
+                默认<br>点击下载
+            </button>
+            <h3>ARM32(A7)，默认，推荐，通用，支持所有机型，Android14会提示32位应用</h3>
+        </div>
+        <br><br><br>
+        <div>
+            <button onclick="window.location='BestVpn-arm64.apk'">
+                ARM64(A8)<br>点击下载
+            </button>
+            <h3>推荐，支持大部分机型，适配64位Android14</h3>
+        </div>
+        <br><br>
+        <div>
+            <button onclick="window.location='BestVpn-x86-x64.apk'">
+                x86-x64<br>点击下载
+            </button>
+            <h3>64位模拟器选这个</h3>
+        </div>
+        <br>
+        <div>
+            <button onclick="window.location='BestVpn-x86.apk'">
+                x86<br>点击下载
+            </button>
+            <h3>32位模拟器选这个</h3>
+        </div>
+    </center>
 </body>
