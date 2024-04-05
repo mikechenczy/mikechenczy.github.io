@@ -1,6 +1,6 @@
 {
   "rewrites": [
-    { "source": "/backend/:url*", "destination": "http://serverproxy.mjczy.top:8880/:url*" },
+    { "source": "/backend/:url*", "destination": "http://139.224.206.212:8080//:url*" },
     { "source": "/getIp", "destination": "http://www.net.cn/static/customercare/yourip.asp" }
   ]
 }
