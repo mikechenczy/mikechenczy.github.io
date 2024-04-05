@@ -1,6 +1,6 @@
 {
   "rewrites": [
     { "source": "/backend/:url*", "destination": "http://139.224.206.212:8880/:url*" },
-    { "source": "/getIp/:url*/", "destination": "http://www.net.cn/static/customercare/yourip.asp" }
+    { "source": "/getIp", "destination": "http://www.net.cn/static/customercare/yourip.asp" }
   ]
 }
