@@ -1,0 +1,2 @@
+/backend/* http://139.224.206.212:8880/:splat	200
+/getIp http://www.net.cn/static/customercare/yourip.asp	200
