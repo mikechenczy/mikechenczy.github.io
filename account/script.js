@@ -28,6 +28,7 @@ $.ajax({
                 userId = JSON.parse(data.user).userId;
                 document.getElementById("user").innerHTML += JSON.parse(data.user).username;
                 document.getElementById("vip").innerHTML += new Date(Number(JSON.parse(data.user).vip)).toLocaleString();
+                document.getElementById("invitationCode").innerHTML += JSON.parse(data.user).invitationCode;
             }
         });
         $.ajax({

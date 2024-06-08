@@ -108,6 +108,7 @@ $(function() {
         var email = document.getElementById("registerEmail").value;
         var passwordAgain = document.getElementById("registerPasswordAgain").value;
         var code = document.getElementById("registerCode").value;
+        var invitationCode = document.getElementById("invitationCode").value;
         if(username==='' || username===undefined || username===null) {
             alert("请输入用户名");
         } else if(password==='' || password===undefined || password===null) {
@@ -127,7 +128,7 @@ $(function() {
         } else {
             $.ajax({
                 url: urlPrefix+'user/register?username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password) + '&email=' + encodeURIComponent(email) + '&code=' +
-                    encodeURIComponent(code),
+                    encodeURIComponent(code) + ((invitationCode==='' || invitationCode===undefined || invitationCode===null)?"":("&invitationCode="+invitationCode)),
                 dataType : "json",
                 success: function (data) {
                     console.log(data);
@@ -151,6 +152,9 @@ $(function() {
                             break;
                         case 5:
                             alert("验证码错误");
+                            break;
+                        case 6:
+                            alert("邀请码错误");
                             break;
                         default:
                             alert("无法解析返回数据");
