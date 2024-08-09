@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lagrange Interpolation</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjs@11.5.0/lib/browser/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .polynomial {
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lagrange Interpolator</h1>
+    <h4>Enter the points (x, y):</h4>
+    <form id="pointsForm">
+        <div id="pointsContainer">
+            <div class="point">
+                x: <input type="number" name="x" step="any" required> 
+                y: <input type="number" name="y" step="any" required>
+            </div>
+        </div>
+        <button type="button" onclick="addPoint()">Add Point</button>
+        <button type="submit">Submit</button>
+    </form>
+    <h4>The polynomial that fits the set of points:</h4>
+    <div id="setpoints"></div>
+    <h4>is:</h4>
+    <div id="polynomial" class="polynomial"></div>
+
+    <script>
+        let xs = [];
+        let ys = [];
+
+        function addPoint() {
+            const container = document.getElementById('pointsContainer');
+            const pointDiv = document.createElement('div');
+            pointDiv.className = 'point';
+            pointDiv.innerHTML = `
+                x: <input type="number" name="x" step="any" required> 
+                y: <input type="number" name="y" step="any" required>
+            `;
+            container.appendChild(pointDiv);
+        }
+
+        document.getElementById('pointsForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            xs = [];
+            ys = [];
+            const inputs = document.querySelectorAll('#pointsContainer .point');
+            inputs.forEach(input => {
+                const x = math.fraction(parseFloat(input.querySelector('input[name="x"]').value));
+                const y = math.fraction(parseFloat(input.querySelector('input[name="y"]').value));
+                xs.push(x);
+                ys.push(y);
+            });
+            displayResults();
+        });
+
+        function multiplyPolynomials(a, b) {
+            const degA = a.length;
+            const degB = b.length;
+            const result = Array(degA + degB - 1).fill(math.fraction(0));
+            for (let i = 0; i < degA; i++) {
+                for (let j = 0; j < degB; j++) {
+                    result[i + j] = math.add(result[i + j], math.multiply(a[i], b[j]));
+                }
+            }
+            return result;
+        }
+
+        function addPolynomials(a, b) {
+            const degree = Math.max(a.length, b.length);
+            const c = Array(degree).fill(math.fraction(0));
+            for (let i = 0; i < degree; i++) {
+                const valA = i < a.length ? a[i] : math.fraction(0);
+                const valB = i < b.length ? b[i] : math.fraction(0);
+                c[i] = math.add(valA, valB);
+            }
+            return c;
+        }
+
+        function scalePoly(a, k) {
+            return a.map(coef => math.multiply(coef, k));
+        }
+
+        function getDeltaPolynomial(xs, xpos) {
+            let poly = [math.fraction(1)];
+            let denom = math.fraction(1);
+            for (let i = 0; i < xs.length; i++) {
+                if (i !== xpos) {
+                    const currentTerm = [math.fraction(1), math.fraction(-xs[i])];
+                    denom = math.multiply(denom, math.subtract(xs[xpos], xs[i]));
+                    poly = multiplyPolynomials(poly, currentTerm);
+                }
+            }
+            return scalePoly(poly, math.divide(math.fraction(1), denom));
+        }
+
+        function getPolynomial(xs, ys) {
+            const degree = xs.length;
+            const deltas = Array.from({ length: degree }, (_, i) => getDeltaPolynomial(xs, i));
+            let result = Array(degree).fill(math.fraction(0));
+            for (let i = 0; i < degree; i++) {
+                result = addPolynomials(result, scalePoly(deltas[i], ys[i]));
+            }
+            return result;
+        }
+
+        function convertToPolynomial(coefs) {
+            let s = "";
+            const degree = coefs.length;
+            let isFirstTerm = true;
+
+            for (let i = 0; i < degree; i++) {
+                if (math.abs(coefs[i]) < 1e-10) {
+                    coefs[i] = math.fraction(0);
+                }
+
+                if (!math.equal(coefs[i], math.fraction(0))) {
+                    if (math.sign(coefs[i]) > 0) {
+                        if (!isFirstTerm) {
+                            s += " + ";
+                        }
+                    } else {
+                        s += " - ";
+                        coefs[i] = math.multiply(coefs[i], -1);
+                    }
+
+                    const frac = math.format(coefs[i], { fraction: 'ratio' });
+                    const [numerator, denominator] = frac.split('/');
+
+                    let coefStr = numerator;
+                    if (denominator !== '1') {
+                        coefStr = `\\frac{${numerator}}{${denominator}}`;
+                    }
+
+                    if (coefStr !== '1' || (coefStr === '1' && degree - i - 1 === 0)) {
+                        s += coefStr;
+                    }
+
+                    if (degree - i - 1 === 1) {
+                        s += "x";
+                    } else if (degree - i - 1 > 1) {
+                        s += "x^" + (degree - i - 1);
+                    }
+
+                    isFirstTerm = false;
+                }
+            }
+
+            if (s === "") {
+                s = "0";
+            }
+
+            return "f(x) = " + s;
+        }
+
+        function formatPoint(value) {
+            const frac = math.format(value, { fraction: 'ratio' });
+            const [numerator, denominator] = frac.split('/');
+            return (denominator === '1') ? numerator : frac;
+        }
+
+        function displayResults() {
+            const result = getPolynomial(xs, ys);
+            const polyString = convertToPolynomial(result);
+
+            let setpointsHTML = xs.map((x, i) => `(${formatPoint(x)}, ${formatPoint(ys[i])})`).join(", ");
+            document.getElementById('setpoints').innerHTML = setpointsHTML;
+
+            document.getElementById('polynomial').innerHTML = `$$${polyString}$$`;
+
+            MathJax.typeset();
+        }
+    </script>
+</body>
+</html>
