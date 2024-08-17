@@ -27,6 +27,11 @@
             color: red;
             cursor: pointer;
         }
+		.remove-function-btn {
+            margin-left: 10px;
+            color: red;
+            cursor: pointer;
+        }
 		#chart{
 			width: 50%;
 			margin: auto;
@@ -38,7 +43,7 @@
     <h4>Enter points (x, y) for each function:</h4>
     <form id="functionsForm">
         <div id="functionsContainer">
-            <div class="function">
+            <div class="function" id="function1">
                 <h5>Function 1</h5>
                 <div id="pointsContainer1">
                     <div class="point">
@@ -49,6 +54,7 @@
                 </div>
                 <button type="button" onclick="addPoint(1)">Add Point</button>
                 <button type="button" onclick="submitFunction(1)">Submit Function 1</button>
+				<span class="remove-function-btn" onclick="removeFunction(1)">Remove Function</span>
             </div>
         </div>
         <button type="button" onclick="addFunction()">Add Another Function</button>
@@ -77,6 +83,7 @@
             const functionCount = container.children.length + 1;
             const functionDiv = document.createElement('div');
             functionDiv.className = 'function';
+			functionDiv.id = `function${functionCount}`;
             functionDiv.innerHTML = `
                 <h5>Function ${functionCount}</h5>
                 <div id="pointsContainer${functionCount}">
@@ -88,9 +95,32 @@
                 </div>
                 <button type="button" onclick="addPoint(${functionCount})">Add Point</button>
                 <button type="button" onclick="submitFunction(${functionCount})">Submit Function ${functionCount}</button>
+				<span class="remove-function-btn" onclick="removeFunction(${functionCount})">Remove Function</span>
             `;
             container.appendChild(functionDiv);
             functionPoints.push([]); // Initialize the point set for this function
+        }
+		
+		function removeFunction(functionIndex) {
+            // Remove the function div
+            const functionDiv = document.getElementById(`function${functionIndex}`);
+            functionDiv.remove();
+            
+            // Remove the associated points from the array
+            functionPoints.splice(functionIndex - 1, 1);
+            
+            // Update function indices in the remaining functions
+            document.querySelectorAll('#functionsContainer .function').forEach((funcDiv, i) => {
+                funcDiv.id = `function${i + 1}`;
+                funcDiv.querySelector('h5').textContent = `Function ${i + 1}`;
+                funcDiv.querySelectorAll('button')[0].setAttribute('onclick', `addPoint(${i + 1})`);
+                funcDiv.querySelectorAll('button')[1].setAttribute('onclick', `submitFunction(${i + 1})`);
+                funcDiv.querySelector('.remove-function-btn').setAttribute('onclick', `removeFunction(${i + 1})`);
+            });
+            
+            // Remove the polynomials and re-compute
+            polynomials.splice(functionIndex - 1, 1);
+            displayResults();
         }
 
         function removePoint(element) {
