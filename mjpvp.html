@@ -1,0 +1,177 @@
+<!--
+    杨玥吧你，看牛魔的源代码
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>MJPVP——做做好的minecraft服务器</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="./layui/css/layui.css"  media="all">
+    <link rel="stylesheet" href="./css/global.css"  media="all">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="shortcut icon" href="image/LeapVPN.png">
+    <script src="js/jquery.min.js" charset="UTF-8"></script>
+    <script src="js/utils.js" charset="UTF-8"></script>
+    <script src="js/download.js" charset="UTF-8"></script>
+    <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+	<style type='text/css'>
+.iframe-container {
+  padding-top: 56.25%;
+  position: relative;
+}
+.iframe-container iframe {
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   top: 0;
+   left: 0;
+}
+</style>
+</head>
+<body>
+<ul class="layui-nav">
+    <li class="layui-nav-item">
+        <a href="index.html">首页</a>
+    </li>
+    <!--<li class="layui-nav-item">
+        <a href="donate.html">捐赠</a>
+    </li>-->
+    <li class="layui-nav-item">
+        <a href="about.html">关于</a>
+    </li>
+    <li class="layui-nav-item">
+        <a href="javascript:;">产品</a>
+        <dl class="layui-nav-child">
+            <dd><a href="https://blog.mjczy.top/">我的博客</a></dd>
+            <dd><a href="leapvpn.html">飞跃VPN</a></dd>
+			<dd class="layui-this"><a href="">MJPVP</a></dd>
+            <!--<dd><a href="letschat.html">聊信</a></dd>-->
+        </dl>
+    </li>
+</ul>
+<div class="site-banner">
+    <div class="site-banner-bg" style="background-size: cover;">
+    </div>
+    <div class="site-banner-main">
+        <div class="site-zfj site-zfj-anim">
+            <i class="layui-icon" style="color: #fff; color: rgba(255,255,255,.6);"><img src="image/MJLogo.png" style="width: 75%"></i>
+        </div>
+        <div class="layui-anim site-desc site-desc-anim">
+            <p class="web-font-desc">MJPVP——一个干净的mc服务器</p>
+            <cite>无需正版，无需注册，起床战争、战桥、单挑、跑酷、建筑大师、空岛生存...
+			<br>地址:mc.mjczy.top 或 地址(ipv6,推荐):ipv6.mjczy.top
+            </cite>
+
+        </div>
+        <div class="site-download">
+            <a class="layui-inline site-down" onclick="
+			var text='mc.mjczy.top';
+			var isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+            var element = document.createElement('textarea');
+            // 防止在ios中产生缩放效果
+            element.style.fontSize = '12pt';
+            // 重置盒模型
+            element.style.border = '0';
+            element.style.padding = '0';
+            element.style.margin = '0';
+            // 将元素移到屏幕外
+            element.style.position = 'absolute';
+            element.style[isRTL ? 'right' : 'left'] = '-9999px';
+            // 移动元素到页面底部
+            let yPosition = window.pageYOffset || document.documentElement.scrollTop;
+            element.style.top = `${yPosition}px`;
+            //设置元素只读
+            element.setAttribute('readonly', '');
+            element.value = text;
+            document.body.appendChild(element);
+            element.select();
+            element.setSelectionRange(0, element.value.length);
+            document.execCommand('copy');
+            element.remove();
+            alert('已复制到剪切板');
+			">
+                <cite class="layui-icon"></cite>
+                点击复制地址
+            </a>
+            <!--<a href="javascript:download('https://gh-proxy.com/https://raw.githubusercontent.com/mikechenczy/mikechenczy.github.io/master/飞跃.png','飞跃VPN安装包.exe');" class="layui-inline site-down">
+                <cite class="layui-icon"></cite>
+                下载Windows版
+            </a>-->
+            <a class="layui-inline site-down" onclick="
+			var text='ipv6.mjczy.top';
+			var isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+            var element = document.createElement('textarea');
+            // 防止在ios中产生缩放效果
+            element.style.fontSize = '12pt';
+            // 重置盒模型
+            element.style.border = '0';
+            element.style.padding = '0';
+            element.style.margin = '0';
+            // 将元素移到屏幕外
+            element.style.position = 'absolute';
+            element.style[isRTL ? 'right' : 'left'] = '-9999px';
+            // 移动元素到页面底部
+            let yPosition = window.pageYOffset || document.documentElement.scrollTop;
+            element.style.top = `${yPosition}px`;
+            //设置元素只读
+            element.setAttribute('readonly', '');
+            element.value = text;
+            document.body.appendChild(element);
+            element.select();
+            element.setSelectionRange(0, element.value.length);
+            document.execCommand('copy');
+            element.remove();
+            alert('已复制到剪切板');
+			">
+                <cite class="layui-icon"></cite>
+                点击复制地址(ipv6,推荐)
+            </a>
+			<a class="layui-inline site-down" onclick="
+			var text='ipv6.mjczy.top:25564';
+			var isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+            var element = document.createElement('textarea');
+            // 防止在ios中产生缩放效果
+            element.style.fontSize = '12pt';
+            // 重置盒模型
+            element.style.border = '0';
+            element.style.padding = '0';
+            element.style.margin = '0';
+            // 将元素移到屏幕外
+            element.style.position = 'absolute';
+            element.style[isRTL ? 'right' : 'left'] = '-9999px';
+            // 移动元素到页面底部
+            let yPosition = window.pageYOffset || document.documentElement.scrollTop;
+            element.style.top = `${yPosition}px`;
+            //设置元素只读
+            element.setAttribute('readonly', '');
+            element.value = text;
+            document.body.appendChild(element);
+            element.select();
+            element.setSelectionRange(0, element.value.length);
+            document.execCommand('copy');
+            element.remove();
+            alert('已复制到剪切板');
+			">
+                <cite class="layui-icon"></cite>
+                自建minemen加速ip
+            </a>
+        </div>
+    </div>
+</div>
+<div class="bottom-container">
+	<div class="iframe-container">
+		<iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=112970675785521&bvid=BV1VGe3ePESd&cid=500001651429406&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" ></iframe>
+	</div>
+</div>
+
+
+<div id="footer" style="height: 100px; border-top: #e2e2e2 solid 1px; background: #f3f3f3; text-align: center;">
+    <h4 style="margin-top: 28px;">©2024 mjczy.top &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://icp-faq.dnspod.cn/" target="_blank" rel="nofollow">未备号</a></h4>
+    <h4 style="margin-top: 28px;">法律声明：严禁用户从事任何违法犯罪行为,产生的相关责任用户自负,对此我们不承担任何法律责任。</h4>
+</div>
+<script src="./layui/layui.js" charset="utf-8"></script>
+</body>
+</html>
