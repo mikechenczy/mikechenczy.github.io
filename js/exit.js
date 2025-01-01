@@ -7,7 +7,7 @@ $(function() {
         success: function (data) {
             removeCookie("username")
             removeCookie("password")
-            window.location="leapvpn.html";
+            window.location="leap.html";
         }
     });
 });
