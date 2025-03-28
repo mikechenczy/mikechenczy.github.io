@@ -5,5 +5,11 @@
         "host": "",
         "ipv6-new": "http://ipv6.mjczy.top:8880/",
         "ipv4-new": "https://proxy.mjczy.top/server/"
-    }
+    },
+	"leapremote":{
+		"ipv4":"http://ipv6proxy.mjczy.top:2086/",
+		"ipv6":"http://ipv6.mjczy.top:2086/",
+		"ipv4Url":"ws://ipv6proxy.mjczy.top:2086/websocket/",
+		"ipv6Url":"ws://ipv6.mjczy.top:2086/websocket/"
+	}
 }
