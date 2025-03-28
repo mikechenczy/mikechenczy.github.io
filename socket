@@ -1,10 +1,10 @@
 {
     "leapvpn": {
-        "ipv4": "https://proxy.mjczy.top/server/",
+        "ipv4": "http://home.mjczy.top/leap/",
         "ipv6": "http://ipv6.mjczy.top:8880/",
         "host": "",
         "ipv6-new": "http://ipv6.mjczy.top:8880/",
-        "ipv4-new": "https://proxy.mjczy.top/server/"
+        "ipv4-new": "http://home.mjczy.top/leap/"
     },
 	"leapremote":{
 		"ipv4":"http://ipv6proxy.mjczy.top:2086/",
