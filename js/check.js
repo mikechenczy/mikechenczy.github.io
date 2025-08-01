@@ -17,7 +17,7 @@ var username = getCookie('username')
 var password = getCookie("password")
 if(username != null && username !== "" && password != null && password !== "" && check(username, password)) {
     $.ajax({
-        url: debug?"https://mjczy.top/getIp":"getIp",
+        url: debug?"https://myip.ipip.net/":"https://myip.ipip.net/",
         dataType: "text",
         success: function (data) {
             console.log(data);
@@ -29,6 +29,8 @@ if(username != null && username !== "" && password != null && password !== "" &&
                     ip = pattern.exec(data)[0];
                 }
             }
+            const match = data.match(/\d{1,3}(?:\.\d{1,3}){3}/);
+            ip = match ? match[0] : null;
             console.log(ip);
             $.ajax({
                 url: urlPrefix+'user/login?device=web&username=' + encodeURIComponent(username) + '&password='

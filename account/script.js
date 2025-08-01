@@ -3,7 +3,7 @@ if(getCookie("username")==null || getCookie("password")==null) {
     window.location = 'login.html';
 }
 $.ajax({
-    url: debug?"https://mjczy.top/getIp":"getIp",
+    url: debug?"https://myip.ipip.net/":"https://myip.ipip.net/",
     dataType: "text",
     success: function (data) {
         console.log(data);
@@ -15,6 +15,8 @@ $.ajax({
                 ip = pattern.exec(data)[0];
             }
         }
+        const match = data.match(/\d{1,3}(?:\.\d{1,3}){3}/);
+        ip = match ? match[0] : null;
         console.log(ip);
         $.ajax({
             url: urlPrefix+'user/login?device=web&username=' + encodeURIComponent(getCookie('username')) + '&password='
