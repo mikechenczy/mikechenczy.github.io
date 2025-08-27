@@ -45,8 +45,10 @@
     <li class="layui-nav-item">
         <a href="javascript:;">产品</a>
         <dl class="layui-nav-child">
-            <dd><a href="https://blog.mjczy.top/">我的博客</a></dd>
             <dd><a href="leap.html">飞跃加速</a></dd>
+			<dd><a href="leapremote.html">飞跃云控</a></dd>
+			<dd><a href="https://cdn.mjczy.top/">飞跃CDN</a></dd>
+			<dd><a href="https://blog.mjczy.top/">我的博客</a></dd>
 			<dd class="layui-this"><a href="">MJPVP</a></dd>
             <!--<dd><a href="letschat.html">聊信</a></dd>-->
         </dl>
@@ -81,7 +83,7 @@
             element.style.position = 'absolute';
             element.style[isRTL ? 'right' : 'left'] = '-9999px';
             // 移动元素到页面底部
-            let yPosition = window.pageYOffset || document.documentElement.scrollTop;
+            var yPosition = window.pageYOffset || document.documentElement.scrollTop;
             element.style.top = `${yPosition}px`;
             //设置元素只读
             element.setAttribute('readonly', '');
