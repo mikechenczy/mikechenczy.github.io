@@ -1,0 +1,10 @@
+[[redirects]]
+  from = "/backend/*"
+  to = "https://proxymjczy.netlify.app/leap/:splat"
+  status = 200
+  force = false
+  headers = {Host = "proxymjczy.netlify.app", X-Forwarded-Host = "proxymjczy.netlify.app"}
+[[redirects]]
+  from = "/getIp"
+  to = "http://www.net.cn/static/customercare/yourip.asp"
+  status = 200
