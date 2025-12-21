@@ -1,2 +1,2 @@
-/backend/* https://proxymjczy.netlify.app/leap/:splat	200
+/backend/* https://proxymjczy.netlify.app/leap/:splat	301
 /getIp http://www.net.cn/static/customercare/yourip.asp	200
