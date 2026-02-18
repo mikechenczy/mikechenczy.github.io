@@ -1,2 +1,2 @@
-/backend/* http://114.86.109.23:24389/leap/:splat 200
+/backend/* http://114.86.109.23:24402/leap/:splat 200
 /getIp http://www.net.cn/static/customercare/yourip.asp 200
